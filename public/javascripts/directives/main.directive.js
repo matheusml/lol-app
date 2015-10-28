@@ -41,11 +41,29 @@
 			}
 
 			function search(username, region) {
+				vm.loading = true;
+				vm.notFound = false;
+				vm.playerStatSummaries = [];
+
 				PlayersService.getByUsername(username, region).then(function(response) {
-					var playerId = response.data[username].id;
-					PlayersService.getById(playerId, region).then(function(response) {
-						vm.playerStatSummaries = response.data.playerStatSummaries;
-					});
+					if (response.data && response.data[username]) {
+						var playerId = response.data[username].id;
+						searchById(playerId, region);
+					}
+					else {
+						vm.notFound = true;
+						vm.loading = false;
+					}
+				});
+			}
+
+			function searchById(playerId, region) {
+				PlayersService.getById(playerId, region).then(function(response) {
+					vm.playerStatSummaries = response.data.playerStatSummaries;
+					vm.loading = false;
+					if (!vm.playerStatSummaries) {
+						vm.notFound = true;
+					}
 				});
 			}
 		}
