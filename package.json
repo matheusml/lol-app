@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "pretest": "npm install",
+    "test": "node node_modules/karma/bin/karma start karma.conf.js",
+    "test-single-run": "node node_modules/karma/bin/karma start karma.conf.js  --single-run"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,6 +16,15 @@
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "restler": "^3.4.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "jasmine-core": "^2.2.0",
+    "jasmine-reporters": "^2.0.5",
+    "karma": "^0.12.24",
+    "karma-coverage": "^0.2.7",
+    "karma-jasmine": "^0.2.2",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "phantomjs": "^1.9.16"
   }
 }

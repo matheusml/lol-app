@@ -1,0 +1,9 @@
+{
+  "name": "lol-app",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.28",
+    "angular-mocks": "~1.2.28"
+  }
+}
