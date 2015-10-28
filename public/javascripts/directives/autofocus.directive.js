@@ -5,14 +5,18 @@
 		.module('app')
 		.directive('autofocus', Autofocus);
 
-	function Autofocus() {
+	Autofocus.$inject = ['$timeout'];
+
+	function Autofocus($timeout) {
 		return {
 	    	restrict: 'A',
-	      	link : function($scope, $element) {
-	        	$timeout(function() {
-	          		$element[0].focus();
-	        	});
-	      	}
+			link: linker
 	  	};
+
+		function linker($scope, $element, $attrs) {
+			$timeout(function() {
+				$element[0].focus();
+			}, 0);
+		}
 	}
 })();
