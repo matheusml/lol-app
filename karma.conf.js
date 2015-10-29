@@ -7,9 +7,9 @@ module.exports = function(config){
         reporters : ['dots', 'junit','coverage'],
 
         files : [
-			'bower_components/angular/angular.min.js',
-			'bower_components/angular-mocks/angular-mocks.js',
-			'javascripts/angularApp.js',
+            'bower_components/angular/angular.min.js',
+            'bower_components/angular-mocks/angular-mocks.js',
+            'javascripts/angularApp.js',
             'javascripts/**/*.js',
         ],
 

@@ -1,22 +1,22 @@
 (function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.directive('autofocus', Autofocus);
+    angular
+        .module('app')
+        .directive('autofocus', Autofocus);
 
-	Autofocus.$inject = ['$timeout'];
+    Autofocus.$inject = ['$timeout'];
 
-	function Autofocus($timeout) {
-		return {
-	    	restrict: 'A',
-			link: linker
-	  	};
+    function Autofocus($timeout) {
+        return {
+            restrict: 'A',
+            link: linker
+        };
 
-		function linker($scope, $element, $attrs) {
-			$timeout(function() {
-				$element[0].focus();
-			}, 0);
-		}
-	}
+        function linker($scope, $element, $attrs) {
+            $timeout(function() {
+                $element[0].focus();
+            }, 0);
+        }
+    }
 })();

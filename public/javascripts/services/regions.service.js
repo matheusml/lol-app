@@ -1,15 +1,15 @@
 (function() {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.service('RegionsService', RegionsService);
+    angular
+        .module('app')
+        .service('RegionsService', RegionsService);
 
-	RegionsService.$inject = ['$http'];
+    RegionsService.$inject = ['$http'];
 
-	function RegionsService($http) {
-		this.get = function() {
-			return $http.get('/regions');
-		};
-	}
+    function RegionsService($http) {
+        this.get = function() {
+            return $http.get('/regions');
+        };
+    }
 })();

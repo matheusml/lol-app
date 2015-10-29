@@ -1,13 +1,13 @@
 .list-group-item-text {
-	padding: 5px;
+    padding: 5px;
 }
 
 h4 .label {
-	float: right;
+    float: right;
 }
 
 .highlight-content {
-	padding: 20px;
-	color: white;
-	font-size: 18px;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
 }
