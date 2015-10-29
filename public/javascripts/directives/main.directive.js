@@ -5,9 +5,9 @@
 		.module('app')
 		.directive('main', Main);
 
-	Main.$inject = ['PlayersService'];
+	Main.$inject = ['PlayersService', 'RegionsService'];
 
-	function Main(PlayersService) {
+	function Main(PlayersService, RegionsService) {
 		return {
 			restrict: 'E',
 			scope: {},
@@ -63,20 +63,10 @@
 			init();
 
 			function init() {
-				vm.regions = [
-					{ label: 'North America', code: 'na' },
-					{ label: 'Brazil', code: 'br' },
-					{ label: 'Europe North & East', code: 'eune' },
-					{ label: 'Europe West', code: 'euw' },
-					{ label: 'Korea', code: 'kr' },
-					{ label: 'Latin America North', code: 'lan' },
-					{ label: 'Latin America South', code: 'las' },
-					{ label: 'Oceania', code: 'oce' },
-					{ label: 'Russia', code: 'ru' },
-					{ label: 'Turkey', code: 'tr' },
-				];
-
-				vm.region = vm.regions[0];
+				RegionsService.get().then(function(response) {
+					vm.regions = response.data;
+					vm.region = vm.regions[0];
+				});
 			}
 
 			function search(username, region) {
