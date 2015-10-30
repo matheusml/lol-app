@@ -3,7 +3,7 @@ var rest = require('restler');
 
 var router = express.Router();
 
-var KEY = '8bb1d844-5642-42e5-8e13-1a15596633a5';
+var KEY = process.env.KEY;
 var BASE_URL = 'https://{REGION}.api.pvp.net/api/lol/{REGION}/';
 
 router.get('/:id/regions/:region', function(req, res, next) {
