@@ -7,7 +7,7 @@
         "pretest": "npm install",
         "test": "node node_modules/karma/bin/karma start karma.conf.js",
         "test-single-run": "node node_modules/karma/bin/karma start karma.conf.js  --single-run",
-        "postinstall": "node node_modules/bower/bin/bower install | gulp"
+        "postinstall": "bower cache clean && bower install"
     },
     "dependencies": {
         "body-parser": "~1.13.2",
